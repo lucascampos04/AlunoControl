@@ -16,17 +16,17 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6f42ad">
         <a class="navbar-nav" href="#">
-            <h1>Logo da Empresa</h1>
+            <h1 class="nav-item nav-link" id="logo">Logo da Empresa</h1>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
             <span class="navbar-toggler-icons"></span>
         </button>
 
         <div id="navMobile" class="navbar-collapse collapse justify-content-end">
-            <a class="nav-item nav-link">Home</a>
-            <a class="nav-item nav-link">Cadastrar Aluno</a>
-            <a class="nav-item nav-link">Pesquisar Aluno</a>
-            <a class="nav-item nav-link btn-danger">Sair</a>
+            <a class="nav-item nav-link"  id="home">Home</a>
+            <a class="nav-item nav-link" id="addAluno">Cadastrar Aluno</a>
+            <a class="nav-item nav-link" id="searchAluno">Pesquisar Aluno</a>
+            <a class="nav-item nav-link btn-danger" id="quit">Sair</a>
         </div>
     </nav>
 </header>
@@ -49,6 +49,11 @@
         <div class="clear"></div>
     </div>
 </section>
+
+<footer class="modal-footer font-weight-bold text-center" style="background:  #7e03aa; border: none;">
+    <div style="display: inline-block; width: 100%; height: 30px; color: white">&copy; Este site contém direitos autorais</div>
+</footer>
+
 
 
     <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>

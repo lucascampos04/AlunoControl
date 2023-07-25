@@ -192,3 +192,23 @@ a{
 .new-section > .new-container{
     z-index: 105;
 }
+
+#navMobile a{
+    transition: 2s;
+}
+
+#home:hover, #addAluno:hover, #searchAluno:hover{
+    color: white;
+}
+
+#quit{
+    opacity: 0.7;
+}
+
+#logo{
+    transition: 3s;
+}
+
+#logo:hover{
+    text-decoration: none;
+}
