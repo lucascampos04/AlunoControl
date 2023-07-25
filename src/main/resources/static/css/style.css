@@ -26,6 +26,8 @@ a{
 .vm{
     width: 50%;
     float: right;
+    position: relative;
+    left: 8%;
 }
 
 .btn {
@@ -36,7 +38,8 @@ a{
     --bg: #080312;
     --color: #afffff;
     color: var(--color);
-    /* use position: relative; so that BG is only for .btn */
+    min-width: 150px;
+    min-height: 80px;
     position: relative;
     isolation: isolate;
     display: inline-grid;
@@ -180,7 +183,7 @@ a{
 }
 
 #container-center{
-    margin-left: 10vw;
+    margin-right: 20vw;
 }
 
 #container-center .text-h1{
@@ -211,4 +214,21 @@ a{
 
 #logo:hover{
     text-decoration: none;
+}
+
+@media screen and (max-width: 668px){
+    .vm{
+        width: 100%;
+        margin: 20px;
+        height: 10%;
+    }
+
+    #navMobile{
+        z-index: 120;
+        height: 9vw;
+    }
+
+    nav{
+        height: 100%;
+    }
 }

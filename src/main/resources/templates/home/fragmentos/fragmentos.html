@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Projeto Academy</title>
+    <meta name="author" content="Lucas Oliveira">
+    <script src="https://Kit.fontawesome.com/006642858d.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header th:fragment="cabecalho">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #6f42ad">
+            <a class="navbar-nav" th:href="@{'/'}">
+                <h1 class="nav-item nav-link" id="logo">Logo da Empresa</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMobile">
+                <span class="navbar-toggler-icons"></span>
+            </button>
+
+            <div id="navMobile" class="navbar-collapse collapse justify-content-end">
+                <a class="nav-item nav-link"  id="home"><i class="fas fa-home"></i> Home</a>
+                <a class="nav-item nav-link" id="addAluno">Cadastrar Aluno</a>
+                <a class="nav-item nav-link" id="searchAluno">Pesquisar Aluno</a>
+                <a class="nav-item nav-link btn-danger" id="quit">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <footer class="modal-footer font-weight-bold text-center" style="background:  #7e03aa; border: none;" th:fragment="rodape">
+        <div style="display: inline-block; width: 100%; height: 30px; color: white">&copy; Este site contém direitos autorais</div>
+    </footer>
+
+    <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
