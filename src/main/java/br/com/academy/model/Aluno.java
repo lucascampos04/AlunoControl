@@ -2,9 +2,8 @@ package br.com.academy.model;
 
 import br.com.academy.Enums.Curso;
 import br.com.academy.Enums.Status;
-
-import javax.persistence.*;
-
+import jakarta.transaction.UserTransaction;
+import jakarta.persistence.*;
 @Entity
 public class Aluno {
     @Id
@@ -43,7 +42,7 @@ public class Aluno {
         this.turno = turno;
     }
 
-    public Enum getCurso() {
+    public Curso getCurso() {
         return curso;
     }
 
