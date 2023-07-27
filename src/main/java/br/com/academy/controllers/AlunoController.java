@@ -8,13 +8,11 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class AlunoController {
 
-    @GetMapping("Alunos/inserindoAlunos")
+    @GetMapping("/inserindoAlunos")
     public ModelAndView inserindoAluno(Aluno aluno){
         ModelAndView mv = new ModelAndView();
         mv.setViewName("inserindoAlunos/inserindoAlunos");
         return mv;
     }
-
-
 
 }
