@@ -208,11 +208,12 @@ a{
     opacity: 0.7;
 }
 
-#logo{
-    transition: 3s;
+.nome-empresa a {
+    text-decoration: none;
+    color: white; /* Defina a cor desejada para o link da empresa */
 }
-
-#logo:hover{
+.nameEmpresa a:hover{
+    color: white;
     text-decoration: none;
 }
 
