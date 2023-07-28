@@ -11,8 +11,12 @@ public class Aluno {
     private Integer id;
     @Column(name = "Nome")
     private String nome;
+    @Enumerated(EnumType.STRING)
     @Column(name = "Curso")
     private Curso curso;
+    @Column(name = "Matricula")
+    private String matricula;
+    @Enumerated(EnumType.STRING)
     @Column(name = "Status")
     private Status status;
     @Column(name = "Turno")
@@ -52,5 +56,17 @@ public class Aluno {
 
     public void setStatus(Status status) {
         this.status = status;
+    }
+
+    public void setCurso(Curso curso) {
+        this.curso = curso;
+    }
+
+    public String getMatricula() {
+        return matricula;
+    }
+
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
     }
 }
