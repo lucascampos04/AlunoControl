@@ -16,6 +16,54 @@
 
 <div th:replace="/home/fragmentos/fragmentos :: cabecalho-pag-inserirAluno"></div>
 
+<div class="container mt-5">
+
+<h4 class="offset-md-2">+ Inserir Aluno</h4>
+<hr>
+    <form method="post" action="/InsertAlunos" th:object="${aluno}">
+        <div class="row">
+            <div class="col-md-5 form-group offset-md-3">
+                <label>Nome do Aluno:</label>
+                <input class="form-control" placeholder="Ex: Lucas Oliveira" th:field="*{nome}">
+            </div>
+        </div>
+    <hr>
+        <div class="row">
+            <div class="col-md-5 form-group offset-md-3">
+                <label>Selecione o curso:</label>
+                <select class="form-control">
+                    <option th:each="curso : ${T(br.com.academy.Enums.Curso).values()}"
+                    th:value="${curso}" th:text="${curso}"></option>
+                </select>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-md-5 form-group offset-md-3">
+                <label>Status:</label>
+                <input class="form-control" id="matricula" th:field="*{matricula}">
+                <button type="button" onclick="GerarMatricula();" class="btn btn-dark mt-2 " style="width: 8vw; height: 48px; font-size: 18px" >Gerar</button>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5 form-group offset-md-3">
+                <label>Selecione o status:</label>
+                <select class="form-control">
+                    <option th:each="status : ${T(br.com.academy.Enums.Status).values()}"
+                            th:value="${status}" th:text="${status}"></option>
+                </select>
+            </div>s
+        </div>
+
+        <div class="row">
+            <button type="submit" class="btn btn-success offset-md-3">Salvar</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <a class="btn btn-outline-danger">Voltar</a>
+        </div>
+    </form>
+</div>
+
+<script src="js/main.js"></script>
 <script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
 <script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
 </body>

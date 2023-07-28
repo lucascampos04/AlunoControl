@@ -30,7 +30,7 @@ a{
     left: 8%;
 }
 
-.btn {
+.vm button {
     --border-color: linear-gradient(-45deg, #ffae00, #7e03aa, #00fffb);
     --border-width: .125em;
     --curve-size: .5em;
@@ -65,14 +65,14 @@ a{
     transition: color 250ms;
 }
 
-.btn::after,
-.btn::before {
+.vm button::after,
+.vm button::before {
     content: '';
     position: absolute;
     inset: 0;
 }
 
-.btn::before {
+.vm button::before {
     background: var(--border-color);
     background-size: 300% 300%;
     animation: move-bg7234 5s ease infinite;
@@ -93,7 +93,7 @@ a{
     }
 }
 
-.btn::after {
+.vm button::after {
     background: var(--bg);
     z-index: -1;
     clip-path: polygon(
@@ -117,7 +117,7 @@ a{
     transition: clip-path 500ms;
 }
 
-.btn:where(:hover, :focus)::after {
+.vm button:where(:hover, :focus)::after {
     clip-path: polygon(
         /* Top-left */
             calc(100% - var(--border-width))
@@ -147,7 +147,7 @@ a{
     transition: 200ms;
 }
 
-.btn:where(:hover, :focus) {
+.vm button:where(:hover, :focus) {
     color: #fff;
 }
 
