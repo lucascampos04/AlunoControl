@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Projeto Academy</title>
+    <meta name="author" content="Lucas Oliveira">
+    <script src="https://Kit.fontawesome.com/006642858d.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div th:replace="/home/fragmentos/fragmentos :: cabecalho-pag-inserirAluno"></div>
+
+<div class="container">
+    <h3>Últimos alunos adicionados</h3>
+    <hr>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <th scope="col">Nome</th>
+            <th scope="col">Curso</th>
+            <th scope="col">Matricula</th>
+            <th scope="col">Status</th>
+            <th scope="col">Turno</th>
+        </thead>
+
+        <tbody>
+            <tr th:scope="row" th:each="alunos : ${alunosList}">
+                <td th:text="${alunos.nome}"></td>
+                <td th:text="${alunos.curso}"></td>
+                <td th:text="${alunos.matricula}"></td>
+                <td th:text="${alunos.turno}"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div th:replace="/home/fragmentos/fragmentos :: rodape"></div>
+
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

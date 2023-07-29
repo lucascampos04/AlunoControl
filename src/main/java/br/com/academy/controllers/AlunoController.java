@@ -24,8 +24,25 @@ public class AlunoController {
     @PostMapping("InsertAlunos")
     public ModelAndView inserirAluno(Aluno aluno){
         ModelAndView mv = new ModelAndView();
-        mv.setViewName("redirect:/Aluno/lisAlunos");
+        mv.setViewName("redirect:/alunosadicionados");
         alunorepositorio.save(aluno);
         return mv;
     }
+
+    @GetMapping("/alunosadicionados")
+    public ModelAndView ListAlunos(){
+        ModelAndView mv = new ModelAndView();
+        mv.setViewName("ListAlunos/listAluno");
+        mv.addObject("alunosList", alunorepositorio.findAll());
+        return mv;
+    }
+
+
+
+
+
+
+
+
+
 }
