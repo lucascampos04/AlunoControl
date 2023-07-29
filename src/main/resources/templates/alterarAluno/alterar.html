@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/webjars/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Projeto Academy</title>
+  <meta name="author" content="Lucas Oliveira">
+  <script src="https://Kit.fontawesome.com/006642858d.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+<style>
+  body {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  h4 {
+    margin-left: 15px;
+    font-size: 24px;
+    color: #333;
+  }
+
+  input.form-control, select.form-control {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .btn-dark {
+    background-color: #343a40;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-dark:hover {
+    background-color: #1b1f23;
+  }
+
+
+  .btn-success {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-success:hover {
+    background-color: #218838;
+  }
+
+  .btn-outline-danger {
+    color: #dc3545;
+    border: 2px solid #dc3545;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .btn-outline-danger:hover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+</style>
+
+<div th:replace="/home/fragmentos/fragmentos :: cabecalho-pag-inserirAluno"></div>
+
+<div class="container mt-5">
+
+  <h4 class="offset-md-2">+ Alterar Aluno</h4>
+  <hr>
+  <form method="post" action="/alterar" th:object="${aluno}">
+    <div class="row">
+      <div class="col-md-5 form-group offset-md-3">
+        <input type="hidden" th:field="*{id}">
+        <label>Nome do Aluno:</label>
+        <input class="form-control" placeholder="Ex: Lucas Oliveira" th:field="*{nome}">
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-5 form-group offset-md-3">
+        <label>Selecione o curso:</label>
+        <select class="form-control" th:field="*{curso}">
+          <option th:each="curso : ${T(br.com.academy.Enums.Curso).values()}"
+                  th:value="${curso}" th:text="${curso}"></option>
+        </select>
+      </div>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="col-md-5 form-group offset-md-3">
+        <label>Gerar Matricula:</label>
+        <input readonly="readonly" class="form-control" id="matricula" th:field="*{matricula}">
+        <button type="button" onclick="GerarMatricula();" class="btn btn-dark mt-2 " style="width: 8vw; height: 48px; font-size: 18px" >Gerar</button>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 form-group offset-md-3">
+        <label>Selecione o status:</label>
+        <select class="form-control" th:field="*{status}">
+          <option th:each="status : ${T(br.com.academy.Enums.Status).values()}"
+                  th:value="${status}" th:text="${status}"></option>
+        </select>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-5 form-group offset-md-3">
+        <label>Turno:</label>
+        <input class="form-control" placeholder="Ex: Manhã" th:field="*{turno}">
+      </div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn-success offset-md-3">Salvar</button>
+      &nbsp;&nbsp;&nbsp;&nbsp;
+      <a class="btn btn-outline-danger">Voltar</a>
+    </div>
+
+
+  </form>
+</div>
+
+<script src="js/main.js"></script>
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+<script src="/webjars/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>

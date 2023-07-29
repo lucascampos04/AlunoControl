@@ -26,6 +26,7 @@
             <th scope="col">Matricula</th>
             <th scope="col">Status</th>
             <th scope="col">Turno</th>
+            <th scope="col">Ação</th>
         </thead>
 
         <tbody>
@@ -33,7 +34,17 @@
                 <td th:text="${alunos.nome}"></td>
                 <td th:text="${alunos.curso}"></td>
                 <td th:text="${alunos.matricula}"></td>
+                <td th:text="${alunos.status}"></td>
                 <td th:text="${alunos.turno}"></td>
+
+                <td>
+                    <a class="btn btn-primary" th:href="@{alterar/{id}(id=${alunos.id})}">
+                        <i class="fas fa-edit"></i>Editar</a>
+
+                    <a class="btn btn-danger" th:href="@{excluir/{id}(id=${alunos.id})}">
+                        <i class="fas fa-times"></i>Remover</a>
+                </td>
+
             </tr>
         </tbody>
     </table>
